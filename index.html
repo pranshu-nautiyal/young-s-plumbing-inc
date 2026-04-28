@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Young's Plumbing Inc — Plumber | Call (586)465-6666</title>
+<meta name="description" content="When you need it fixed fast, we show up. Reliable plumbing solutions for every home and business.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Lora:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --brand:   #1a3a6b;
+  --dark:    #0f2044;
+  --light:   #f0f6ff;
+  --accent:  #f59e0b;
+  --cta:     #dc2626;
+  --text:    #0f172a;
+  --text2:   #334155;
+  --muted:   #64748b;
+  --border:  #e2e8f0;
+  --bg:      #f8fafc;
+  --white:   #ffffff;
+  --radius:  14px;
+  --radius-sm: 8px;
+  --shadow:  0 4px 24px rgba(0,0,0,.07);
+  --shadow-md: 0 8px 40px rgba(0,0,0,.11);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,.14);
+  --transition: all .2s cubic-bezier(.4,0,.2,1);
+}
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body { font-family: 'Sora', system-ui, sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* ── Emergency bar ───────────────────────────────────────── */
+.emerg-bar {
+  background: var(--cta);
+  padding: 10px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.emerg-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.emerg-icon { color: #fff; display: flex; align-items: center; }
+.emerg-text { color: #fff; font-size: .85rem; font-weight: 600; }
+.emerg-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,255,255,.15);
+  border: 1.5px solid rgba(255,255,255,.4);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: .82rem;
+  font-weight: 700;
+  transition: var(--transition);
+}
+.emerg-btn:hover { background: rgba(255,255,255,.25); }
+
+/* ── Nav ─────────────────────────────────────────────────── */
+nav {
+  height: 72px;
+  background: var(--dark);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 6vw, 100px);
+  position: sticky;
+  top: 42px;
+  z-index: 100;
+  box-shadow: 0 1px 16px rgba(0,0,0,.06);
+}
+.nav-left { display: flex; align-items: center; gap: 12px; }
+.nav-pip {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(245,158,11,.3);
+}
+.nav-biz { font-size: 1rem; font-weight: 700; color: #ffffff; letter-spacing: -.3px; }
+.nav-right { display: flex; align-items: center; gap: 16px; }
+.nav-link { font-size: .88rem; font-weight: 500; color: rgba(255,255,255,.75); transition: color .15s; }
+.nav-link:hover { color: var(--accent); }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 100px;
+  font-size: .88rem;
+  font-weight: 700;
+  box-shadow: 0 2px 14px color-mix(in srgb, var(--brand) 40%, transparent);
+  transition: var(--transition);
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 24px color-mix(in srgb, var(--brand) 50%, transparent); }
+
+/* ── Hero ────────────────────────────────────────────────── */
+.hero {
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--white);
+}
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px clamp(20px, 6vw, 100px) 80px;
+  background: var(--dark);
+}
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245,158,11,.2);
+  color: var(--accent);
+  border: 1px solid rgba(245,158,11,.5);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  width: fit-content;
+}
+.pill-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--brand);
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{ opacity: 1; } 50%{ opacity: .3; } }
+.hero-h1 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -.5px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.hero-h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+.hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,.78);
+  line-height: 1.8;
+  max-width: 430px;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 48px;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--cta);
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 100px;
+  font-size: .95rem;
+  font-weight: 700;
+  box-shadow: 0 4px 24px color-mix(in srgb, var(--brand) 45%, transparent);
+  transition: var(--transition);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 36px color-mix(in srgb, var(--brand) 55%, transparent); }
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text2);
+  border: 1.5px solid var(--border);
+  padding: 15px 28px;
+  border-radius: 100px;
+  font-size: .92rem;
+  font-weight: 600;
+  background: transparent;
+  transition: var(--transition);
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--brand); background: var(--light); }
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.trust-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245,158,11,.18);
+  border: 1px solid rgba(245,158,11,.4);
+  border-radius: var(--radius-sm);
+  padding: 7px 13px;
+  font-size: .75rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+.badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #22c55e; }
+.hero-right { position: relative; overflow: hidden; }
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 10s ease;
+  display: block;
+}
+.hero-img:hover { transform: scale(1.04); }
+.hero-grad {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--white) 0%, transparent 15%);
+  pointer-events: none;
+}
+.hero-card {
+  position: absolute;
+  bottom: 28px;
+  right: 28px;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 240px;
+}
+.hcard-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--light);
+  color: var(--brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.3rem;
+}
+.hcard-num {
+  font-family: 'Lora', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
+.hcard-lbl { font-size: .72rem; color: var(--muted); font-weight: 500; margin-top: 3px; }
+
+/* ── Stats bar ───────────────────────────────────────────── */
+.stats-bar {
+  background: var(--dark);  /* navy */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat {
+  padding: 36px 28px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,.08);
+  position: relative;
+  transition: background .2s;
+}
+.stat:hover { background: rgba(255,255,255,.04); }
+.stat:last-child { border-right: none; }
+.stat-num {
+  font-family: 'Lora', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.stat-lbl {
+  font-size: .75rem;
+  font-weight: 500;
+  color: rgba(255,255,255,.5);
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+}
+
+/* ── Services section ────────────────────────────────────── */
+.sec {
+  padding: 96px clamp(20px, 6vw, 100px);
+}
+.sec-inner { max-width: 1200px; margin: 0 auto; }
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 14px;
+}
+.eyebrow-line { width: 28px; height: 2px; background: var(--brand); border-radius: 2px; }
+.sec-h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(2rem, 3.2vw, 2.9rem);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -.5px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.sec-sub {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 520px;
+  margin-bottom: 52px;
+}
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.svc-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 26px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: var(--transition);
+  cursor: default;
+}
+.svc-card:hover {
+  border-color: var(--accent);
+  background: var(--light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+.svc-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--light);
+  color: var(--brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background .2s;
+}
+.svc-card:hover .svc-icon-wrap { background: var(--accent); }
+.svc-name {
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+.svc-desc {
+  font-size: .82rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+}
+.svc-card .svc-icon-wrap { flex-shrink: 0; }
+
+/* ── About / Why us ──────────────────────────────────────── */
+.sec-alt { background: var(--bg); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.about-img-col { position: relative; }
+.about-img-frame {
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  box-shadow: var(--shadow-lg);
+}
+.about-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .7s ease;
+}
+.about-img-frame:hover img { transform: scale(1.04); }
+.rating-chip {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--white);
+  border-radius: 100px;
+  padding: 12px 22px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+.chip-stars { color: #f59e0b; font-size: .9rem; letter-spacing: 2px; }
+.chip-text { font-size: .82rem; font-weight: 700; color: var(--text); }
+.chip-src { font-size: .75rem; color: var(--muted); }
+.why-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 36px;
+}
+.why-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.why-check {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--light);
+  color: var(--brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.why-title { font-size: .95rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.why-desc { font-size: .87rem; color: var(--muted); line-height: 1.65; }
+
+/* ── Reviews ─────────────────────────────────────────────── */
+.rev-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 52px;
+  max-width: 1200px;
+}
+.rev-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: var(--transition);
+}
+.rev-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+.rev-stars { color: #f59e0b; font-size: .9rem; letter-spacing: 3px; }
+.rev-text {
+  font-size: .92rem;
+  color: var(--text2);
+  line-height: 1.8;
+  flex: 1;
+  font-style: italic;
+}
+.rev-attr {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.rev-av {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--light);
+  color: var(--brand);
+  font-weight: 800;
+  font-size: .78rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.rev-name { font-size: .88rem; font-weight: 700; color: var(--text); }
+.rev-source { font-size: .75rem; color: var(--muted); margin-top: 1px; }
+
+/* ── CTA band ─────────────────────────────────────────────── */
+.cta-band {
+  background: var(--dark);
+  padding: 80px clamp(20px, 6vw, 100px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-band::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.05);
+  pointer-events: none;
+}
+.cta-label {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.6);
+  margin-bottom: 16px;
+}
+.cta-h2 {
+  color: #ffffff;
+  font-family: 'Lora', serif;
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -.5px;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+.cta-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,.72);
+  margin-bottom: 40px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--white);
+  color: var(--brand);
+  padding: 17px 40px;
+  border-radius: 100px;
+  font-size: 1rem;
+  font-weight: 800;
+  box-shadow: 0 4px 28px rgba(0,0,0,.2);
+  transition: var(--transition);
+  position: relative;
+  z-index: 1;
+}
+.btn-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(0,0,0,.25); }
+
+/* ── Contact section ─────────────────────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 72px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 52px auto 0;
+}
+.c-items { display: flex; flex-direction: column; gap: 28px; }
+.c-row {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.c-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: var(--light);
+  color: var(--brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.c-label {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+.c-value {
+  font-size: .98rem;
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.65;
+}
+.c-value a { color: var(--brand); font-weight: 600; }
+.c-value a:hover { text-decoration: underline; }
+.map-frame {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1.5px solid var(--border);
+  height: 420px;
+}
+.map-frame iframe { width: 100%; height: 100%; border: none; display: block; }
+
+/* ── Footer ──────────────────────────────────────────────── */
+footer {
+  background: var(--text);
+  padding: 30px clamp(20px, 6vw, 100px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.f-left { display: flex; align-items: center; gap: 10px; }
+.f-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand); }
+.f-name { font-size: .9rem; font-weight: 700; color: #fff; }
+.f-copy { font-size: .78rem; color: rgba(255,255,255,.35); }
+
+/* ── FAQ ─────────────────────────────────────────────────── */
+.faq-wrap { max-width: 720px; margin: 48px auto 0; display: flex; flex-direction: column; gap: 12px; }
+.faq-item { border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.faq-q {
+  width: 100%; background: none; border: none; padding: 20px 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: .95rem; font-weight: 600; color: var(--text);
+  text-align: left; cursor: pointer; gap: 16px;
+  transition: background .15s;
+}
+.faq-q:hover { background: var(--bg); }
+.faq-q svg { flex-shrink: 0; color: var(--brand); }
+.faq-a { padding: 0 24px 20px; }
+.faq-a p { font-size: .9rem; color: var(--text2); line-height: 1.7; margin: 0; }
+
+/* ── Mobile ──────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr; gap: 60px; }
+  .rating-chip { position: static; transform: none; margin-top: 20px; display: inline-flex; }
+}
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { height: 420px; }
+  .hero-grad { background: linear-gradient(to bottom, var(--white) 0%, transparent 18%); }
+  .stats-bar { grid-template-columns: repeat(2,1fr); }
+  .stat:nth-child(2) { border-right: none; }
+  .stat:nth-child(3) { border-right: 1px solid rgba(255,255,255,.08); }
+  .svc-grid { grid-template-columns: repeat(2,1fr); }
+  .rev-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-card { display: none; }
+}
+@media (max-width: 600px) {
+  .svc-grid { grid-template-columns: 1fr; }
+  .stats-bar { grid-template-columns: repeat(2,1fr); }
+  .nav-link { display: none; }
+  .hero-h1 { font-size: 2.2rem; }
+  .badge { display: none; }
+  .trust-badges { display: none; }
+}
+</style>
+</head>
+<body>
+
+
+        <div class="emerg-bar">
+          <div class="emerg-inner">
+            <span class="emerg-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+            <span class="emerg-text">24/7 Emergency Service Available</span>
+            <a href="tel:5864656666" class="emerg-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.01z"/></svg> Call Now: (586)465-6666</a>
+          </div>
+        </div>
+
+<nav>
+  <div class="nav-left">
+    <div class="nav-pip"></div>
+    <span class="nav-biz">Young's Plumbing Inc</span>
+  </div>
+  <div class="nav-right">
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#contact" class="nav-link">Contact</a>
+    <a href="tel:5864656666" class="nav-cta"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.01z"/></svg> Call Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-pill"><div class="pill-dot"></div>Plumber</div>
+    <h1 class="hero-h1">
+      Young's Plumbing Inc<br>
+      <em>— Plumbing You Can</em><br>
+      Count On.
+    </h1>
+    <p class="hero-sub">When you need it fixed fast, we show up. Reliable plumbing solutions for every home and business.</p>
+    <div class="hero-btns">
+      <a href="tel:5864656666" class="btn-primary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l .92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.01z"/></svg> (586)465-6666</a>
+      <a href="#services" class="btn-outline">See Our Services</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-badges">
+        <div class="badge"><div class="badge-dot"></div>Licensed &amp; Insured</div>
+        <div class="badge"><div class="badge-dot"></div>Same-Day Available</div>
+        <div class="badge"><div class="badge-dot"></div>Free Estimates</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img class="hero-img" src="https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="Young's Plumbing Inc — Plumber" loading="eager">
+    <div class="hero-grad"></div>
+    <div class="hero-card">
+      <div class="hcard-icon">&#11088;</div>
+      <div>
+        <div class="hcard-num">4.8 ★</div>
+        <div class="hcard-lbl">Google Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">4.8 ★</div><div class="stat-lbl">Google Rating</div></div><div class="stat"><div class="stat-num">350+</div><div class="stat-lbl">Happy Customers</div></div><div class="stat"><div class="stat-num">10+</div><div class="stat-lbl">Years in Business</div></div><div class="stat"><div class="stat-num">100%</div><div class="stat-lbl">Satisfaction Guaranteed</div></div>
+</div>
+
+<!-- SERVICES -->
+<section class="sec" id="services">
+  <div class="sec-inner">
+    <div class="eyebrow"><div class="eyebrow-line"></div>What We Offer</div>
+    <h2 class="sec-h2">Our Services</h2>
+    <p class="sec-sub">From emergency repairs to planned installations, we handle it all. Every job is done by a licensed technician — not a subcontractor, not an apprentice sent alone. We show up on time, explain what we're doing, and don't leave until the job is right.</p>
+    <div class="svc-grid">
+      
+            <div class="svc-card">
+              <div class="svc-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+              <div>
+                <h3 class="svc-name">Leak Repair</h3>
+                <p class="svc-desc">Professional service completed right the first time, guaranteed.</p>
+              </div>
+            </div>
+            <div class="svc-card">
+              <div class="svc-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div>
+                <h3 class="svc-name">Pipe Installation</h3>
+                <p class="svc-desc">Professional service completed right the first time, guaranteed.</p>
+              </div>
+            </div>
+            <div class="svc-card">
+              <div class="svc-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <div>
+                <h3 class="svc-name">Water Heater Service</h3>
+                <p class="svc-desc">Professional service completed right the first time, guaranteed.</p>
+              </div>
+            </div>
+            <div class="svc-card">
+              <div class="svc-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+              <div>
+                <h3 class="svc-name">Drain Cleaning</h3>
+                <p class="svc-desc">Kitchen, bathroom, and main line blockages cleared fast — same day.</p>
+              </div>
+            </div>
+            <div class="svc-card">
+              <div class="svc-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div>
+                <h3 class="svc-name">Emergency Plumbing</h3>
+                <p class="svc-desc">24/7 response for burst pipes, major leaks, and failures that can't wait.</p>
+              </div>
+            </div>
+            <div class="svc-card">
+              <div class="svc-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <div>
+                <h3 class="svc-name">Bathroom Remodel</h3>
+                <p class="svc-desc">Professional service completed right the first time, guaranteed.</p>
+              </div>
+            </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / WHY US -->
+<section class="sec sec-alt" id="about">
+  <div class="about-grid">
+    <div class="about-img-col">
+      <div class="about-img-frame">
+        <img src="https://images.pexels.com/photos/34938441/pexels-photo-34938441.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" alt="Young's Plumbing Inc" loading="lazy">
+      </div>
+      <div class="rating-chip">
+        <div class="chip-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div>
+          <div class="chip-text">4.8 ★ Rating</div>
+          <div class="chip-src">Google Reviews</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="eyebrow"><div class="eyebrow-line"></div>Why Us</div>
+      <h2 class="sec-h2">Why Young's Plumbing Inc?</h2>
+      <p class="sec-sub">There are plenty of options out there. Here is what makes the difference when you choose us.</p>
+      <div class="why-list">
+        
+            <div class="why-item">
+              <div class="why-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+              <div>
+                <div class="why-title">Licensed &amp; Insured</div>
+                <div class="why-desc">Fully licensed and insured for every job. Your home and family are protected.</div>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+              <div>
+                <div class="why-title">Same-Day Service Available</div>
+                <div class="why-desc">We know plumbing problems can't wait. We move fast so you're never left hanging.</div>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+              <div>
+                <div class="why-title">Upfront, Honest Pricing</div>
+                <div class="why-desc">No surprise bills. We give you a clear quote before we start — and we stick to it.</div>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+              <div>
+                <div class="why-title">Satisfaction Guaranteed</div>
+                <div class="why-desc">We're not done until you're happy. That's not marketing — it's how we operate.</div>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="sec">
+  <div class="sec-inner">
+    <div class="eyebrow"><div class="eyebrow-line"></div>Customer Reviews</div>
+    <h2 class="sec-h2">What Real Customers Say</h2>
+    <div class="rev-grid">
+      
+            <div class="rev-card">
+              <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="rev-text">&#8220;Outstanding service at Young's Plumbing Inc. They went above and beyond to ensure everything was perfect. Will definitely return.&#8221;</p>
+              <div class="rev-attr">
+                <div class="rev-av">JM</div>
+                <div>
+                  <div class="rev-name">Jennifer M.</div>
+                  <div class="rev-source">Google Review</div>
+                </div>
+              </div>
+            </div>
+            <div class="rev-card">
+              <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="rev-text">&#8220;Excellent work, very professional. Fair pricing, finished ahead of schedule, and quality that truly shows.&#8221;</p>
+              <div class="rev-attr">
+                <div class="rev-av">RK</div>
+                <div>
+                  <div class="rev-name">Robert K.</div>
+                  <div class="rev-source">Google Review</div>
+                </div>
+              </div>
+            </div>
+            <div class="rev-card">
+              <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="rev-text">&#8220;Tried many places but Young's Plumbing Inc is by far the best. Quality work, friendly staff, great value. Five stars.&#8221;</p>
+              <div class="rev-attr">
+                <div class="rev-av">AS</div>
+                <div>
+                  <div class="rev-name">Amanda S.</div>
+                  <div class="rev-source">Google Review</div>
+                </div>
+              </div>
+            </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec sec-alt" id="faq">
+  <div class="sec-inner">
+    <div class="eyebrow"><div class="eyebrow-line"></div>Common Questions</div>
+    <h2 class="sec-h2">Frequently Asked Questions</h2>
+    <p class="sec-sub">Everything you want to know before you call — answered straight.</p>
+    <div class="faq-wrap">
+      <div class="faq-item">
+              <button class="faq-q" onclick="var a=this.nextElementSibling;a.style.display=a.style.display==='none'||!a.style.display?'block':'none'">How quickly can you get to me?
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a" style="display:none"><p>For emergencies we aim to arrive within 60-90 minutes. For scheduled jobs we typically have same-day or next-day availability.</p></div>
+            </div><div class="faq-item">
+              <button class="faq-q" onclick="var a=this.nextElementSibling;a.style.display=a.style.display==='none'||!a.style.display?'block':'none'">Do you provide free estimates?
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a" style="display:none"><p>Yes. We give you a clear price before any work begins — no hidden fees, no surprises on the invoice.</p></div>
+            </div><div class="faq-item">
+              <button class="faq-q" onclick="var a=this.nextElementSibling;a.style.display=a.style.display==='none'||!a.style.display?'block':'none'">Are you licensed and insured?
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a" style="display:none"><p>Fully licensed, bonded, and insured. We carry liability insurance on every job so you're completely protected.</p></div>
+            </div><div class="faq-item">
+              <button class="faq-q" onclick="var a=this.nextElementSibling;a.style.display=a.style.display==='none'||!a.style.display?'block':'none'">What areas do you serve?
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a" style="display:none"><p>We serve Clinton Township and all surrounding communities. Call us and we'll confirm coverage for your address.</p></div>
+            </div><div class="faq-item">
+              <button class="faq-q" onclick="var a=this.nextElementSibling;a.style.display=a.style.display==='none'||!a.style.display?'block':'none'">Do you offer a warranty on your work?
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-a" style="display:none"><p>All labor is guaranteed. If something we fixed fails, we come back and make it right at no charge.</p></div>
+            </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-label">Ready to Get Started?</div>
+  <h2 class="cta-h2">One Call Solves It</h2>
+  <p class="cta-sub">We answer the phone, give you a straight price, and get the job done right. Most calls are scheduled same-day or next-day. Emergency? We move fast.</p>
+  <a href="tel:5864656666" class="btn-cta"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l .92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.01z"/></svg> Call (586)465-6666</a>
+</div>
+
+<!-- CONTACT -->
+<section class="sec" id="contact">
+  <div class="sec-inner">
+    <div class="eyebrow"><div class="eyebrow-line"></div>Reach Us</div>
+    <h2 class="sec-h2">Contact &amp; Location</h2>
+  </div>
+  <div class="contact-grid">
+    <div class="c-items">
+      <div class="c-row">
+        <div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l .92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.01z"/></svg></div>
+        <div>
+          <div class="c-label">Phone</div>
+          <div class="c-value"><a href="tel:5864656666">(586)465-6666</a></div>
+        </div>
+      </div>
+      <div class="c-row">
+        <div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <div class="c-label">Address</div>
+          <div class="c-value">121 Avery St #3256, Clinton Township, MI 48036</div>
+        </div>
+      </div>
+      <div class="c-row">
+        <div class="c-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div>
+          <div class="c-label">Business Hours</div>
+          <div class="c-value">Mon – Fri &nbsp;&nbsp; 8:00 AM – 7:00 PM<br>Saturday &nbsp;&nbsp; 9:00 AM – 6:00 PM<br>Sunday &nbsp;&nbsp;&nbsp;&nbsp; 10:00 AM – 4:00 PM</div>
+        </div>
+      </div>
+    </div>
+    <div class="map-frame">
+      <iframe
+        src="https://maps.google.com/maps?q=121%20Avery%20St%20%233256%2C%20Clinton%20Township%2C%20MI%2048036%2C%20USA&output=embed&z=15"
+        allowfullscreen loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-left">
+    <div class="f-dot"></div>
+    <span class="f-name">Young's Plumbing Inc</span>
+  </div>
+  <span class="f-copy">&copy; 2026 Young's Plumbing Inc. All rights reserved. &nbsp;&middot;&nbsp; 121 Avery St #3256, Clinton Township, MI 48036</span>
+</footer>
+
+</body>
+</html>
